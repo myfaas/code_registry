@@ -1,0 +1,10 @@
+django
+numpy
+pandas
+matplotlib
+requests
+scipy
+simplejson
+jinja2
+mock
+protobuf
