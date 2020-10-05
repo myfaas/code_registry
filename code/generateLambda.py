@@ -1,7 +1,10 @@
+import random
+import json
+from collections import OrderedDict
+
 packageFilePath = "packages"
 
 # 加载依赖包
-
 with open(packageFilePath) as f:
     data = f.readlines()
     packages = [d[:-1] for d in data]
@@ -16,14 +19,9 @@ def genPYFile(packs, filename):
         packs.append('\ndef main():\n')
         packs.append('  return \'' + filename + ' done!\'\n')
         f.writelines(packs)
-        
 
 
 # 生成50个函数
-import random
-import json
-from collections import OrderedDict
-
 prob = [0.3, 0.4, 0.5, 0.6, 0.7]
 i = 1
 lambda_info = OrderedDict()
@@ -42,5 +40,3 @@ for pro in prob:
 json_str = json.dumps(lambda_info, indent=4)
 with open('lambdas.json', 'w') as json_file:
     json_file.write(json_str)
-
-    
